@@ -4,7 +4,11 @@
   "main": "index.js",
   "author": "Nikolai <nick22783@gmail.com>",
   "license": "MIT",
-  "dependencies": {
+  "scripts": {
+    "dev": "webpack -d"
+  },
+  "dependencies": {},
+  "devDependencies": {
     "webpack": "2.6.1"
   }
 }
