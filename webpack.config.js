@@ -17,6 +17,15 @@ var config = {
     path: BUILD_DIR,
     filename: "app.bundle.js",
   },
+  module: {
+    loaders: [
+      {test: /\.(js|jsx)$/,
+        // include: APP_DIR, // Yn:use either include or exclude
+        exclude: /node_modules/,
+        use: 'babel-loader'
+      }
+    ]
+  }
 }
 
 module.exports = config
