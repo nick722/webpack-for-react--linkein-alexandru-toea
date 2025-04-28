@@ -4,7 +4,8 @@
   "description": "simple book shelf app",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack -d --watch",
+    "dev": "npm run clean && webpack -d",
+    "clean": "rimraf dist",
     "dev-server": "webpack-dev-server",
     "http-server": "http-server dist/",
     "build": "webpack -p"
@@ -15,7 +16,8 @@
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-router-dom": "^4.1.2"
+    "react-router-dom": "^4.1.2",
+    "rimraf": "2.6.1"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
