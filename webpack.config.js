@@ -18,14 +18,16 @@ var config = {
     filename: "app.bundle.js",
   },
   module: {
-    loaders: [
-      {test: /\.(js|jsx)$/,
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
         // include: APP_DIR, // Yn:use either include or exclude
         exclude: /node_modules/,
-        use: 'babel-loader'
-      }
-    ]
-  }
+        use: "babel-loader",
+      },
+      { test: /\.css$/, use: ["style-loader", "css-loader"] },
+    ],
+  },
 }
 
 module.exports = config
