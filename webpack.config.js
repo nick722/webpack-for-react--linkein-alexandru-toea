@@ -16,7 +16,7 @@ var config = {
   entry: APP_DIR + "/index.js",
   output: {
     path: BUILD_DIR,
-    filename: "app.bundle.js",
+    filename: "bundle.js",
   },
   module: {
     rules: [
