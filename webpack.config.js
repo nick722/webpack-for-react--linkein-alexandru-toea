@@ -54,6 +54,7 @@ var config = {
     headers: {
       "X-Custom-header": "yn",
     },
+    open: true, // when you run a dev server, it will automatically open the tab in your default browser with the page.
     // hot: true,
   },
   plugins: [
