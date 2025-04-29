@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server",
     "clean": "rimraf dist",
-    "build": "webpack -d"
+    "build": "SET NODE_ENV=production && yarn clean && yarn webpack -p"
   },
   "dependencies": {
     "bundle-loader": "^0.5.5",
