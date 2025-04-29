@@ -46,6 +46,12 @@ var config = {
       },
     ],
   },
+  devServer: {
+    contentBase: [BUILD_DIR, path.join(__dirname, "assets")], // serve static files from the /assets directory
+    compress: true, // enable gzip compression
+    port: 9000,
+    // hot: true,
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: "index.html",
