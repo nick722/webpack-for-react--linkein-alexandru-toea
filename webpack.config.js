@@ -51,6 +51,9 @@ var config = {
     compress: true, // enable gzip compression
     port: 9000,
     disableHostCheck: false, // if you're usin Webpack Dev Server, this should always be set to false. Apps that do not check host are usually vulnerable to DNS rebinding attacks
+    headers: {
+      "X-Custom-header": "yn",
+    },
     // hot: true,
   },
   plugins: [
