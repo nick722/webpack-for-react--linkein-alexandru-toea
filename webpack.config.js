@@ -47,9 +47,10 @@ var config = {
     ],
   },
   devServer: {
-    contentBase: [BUILD_DIR, path.join(__dirname, "assets")], // serve static files from the /assets directory
+    contentBase: BUILD_DIR,
     compress: true, // enable gzip compression
     port: 9000,
+    disableHostCheck: false, // if you're usin Webpack Dev Server, this should always be set to false. Apps that do not check host are usually vulnerable to DNS rebinding attacks
     // hot: true,
   },
   plugins: [
