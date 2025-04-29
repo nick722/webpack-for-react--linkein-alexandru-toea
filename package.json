@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "webpack-dev-server",
     "clean": "rimraf dist",
-    "build": "SET NODE_ENV=production && yarn clean && yarn webpack -p"
+    "build": "SET NODE_ENV=production && yarn clean && yarn webpack -p",
+    "deploy-gh": "yarn build && git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {
     "bundle-loader": "^0.5.5",
