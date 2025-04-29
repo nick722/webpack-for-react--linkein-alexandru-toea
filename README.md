@@ -1,66 +1,76 @@
-# MyReads
+# Webpack for React Applications
 
-Simple React app for webpack course
+https://rutracker.org/forum/viewtopic.php?t=5597898
 
-## To run
-This project was build using [Yarn](https://yarnpkg.com/en/), however it can be run with NPM only
+D:\nyaku\Downloads\Education\WEBPACK\[LinkedIn - Alexandru Toea] Webpack for React Applications 2018 3h17\
 
-### If using Yarn:
-```
-yarn
-yarn run start
-```
+Год выпуска: 08/2018
 
-### If using NPM:
-```
-npm i
-npm run start
-```
-
-## Project components
-```
-+--public/    
- |-- index.html - DO NOT MODIFY
- |-- favicon.ico - React Icon, You may change if you wish.
-+-- src/
- +-- icons/ - Helpful images for your app. Use at your discretion.
-  |-- add.svg
-  |-- arrow-back.svg
-  |-- arrow-drop-down.svg
- +-- Components/ - Contains the created Components
-   |-- Book.jsx - Functional component that displays a book object (including the state select options)
-   |-- BookShelf.jsx - Functional component that displays a group of books
-   |-- Home.jsx - Functional component that displays the Home screen (based on the state of App.js)
-   |-- SearchPage.jsx - Component that allows users to query API for new books and handles their status
- |-- App.js - App Root, manages the overall state of the application, and handles most API requests
- |-- App.css - Styles for your app.
- |-- App.test.js - Used for testing. Provided with Create React App.
- |-- BooksAPI.js - A JavaScript API for the provided Udacity backend.
- |-- index.js - Updated to incorporate React Router
- |-- index.css - Global styles.
-|-- .gitignore
-|-- README.MD
-|-- SEARCH_TERMS.md - The whitelisted short collection of available search terms
-|-- package.json - npm package manager file.
-```
+Производитель: LinkedIn Learning / Lynda
 
 
-## Backend Server
+Сайт производителя: linkedin.com/learning/webpack-for-react-applications
 
-### `getAll()`
-* Returns a Promise which resolves to a JSON object containing a collection of book objects.
-* This collection represents the books currently in the bookshelves in your app.
+Автор: Alexandru Toea
 
-### `update(book, shelf)`
-* book: `<Object>` containing at minimum an `id` attribute
-* shelf: `<String>` contains one of ["wantToRead", "currentlyReading", "read"]  
-* Returns a Promise which resolves to a JSON object containing the response data of the POST request
+Продолжительность: 3:17
 
-### `search(query, maxResults)`
-* query: `<String>`
-* maxResults: `<Integer>` Due to the nature of the backend server, search results are capped at 20, even if this is set higher.
-* Returns a Promise which resolves to a JSON object containing a collection of book objects.
-* These books do not know which shelf they are on. They are raw results only. You'll need to make sure that books have the correct state while on the search page.
+Тип раздаваемого материала: Видеоклипы
 
-## Important
-The backend API uses a fixed set of cached search results and is limited to a particular set of search terms, which can be found in [SEARCH_TERMS.md](SEARCH_TERMS.md). That list of terms are the _only_ terms that will work with the backend, so don't be surprised if your searches for Basket Weaving or Bubble Wrap don't come back with any results.
+Язык: Английский
+
+Описание: Discover how to optimize your web applications using the webpack JavaScript module bundler. In this project-based course, Alexandru Toea demonstrates how to take a preexisting React application—along with basic webpack configuration—and apply advanced features such as code splitting. He also demonstrates how to install Babel and add it to your webpack application, as well as how to deploy your application to dynamic cloud hosting sites such as AWS in order to improve the existing application. Upon completing this course, you'll have the knowledge you need to configure webpack and use it to develop high-quality React apps at a faster pace.
+
+## Содержание
+
+Welcome
+4m 51s
+A React application
+13m 21s
+Deliverables with webpack, part 1
+7m 31s
+Deliverables with webpack, part 2
+7m 23s
+
+Set up Babel, part 1
+8m 48s
+Set up Babel, part 2
+8m 14s
+Webpack configuration: Load assets
+10m 38s
+Webpack configuration: File loader
+7m 46s
+Webpack configuration: SCSS
+12m 51s
+Performance increase
+11m 5s
+Cache busting
+8m 46s
+Project files cleanup
+6m 27s
+
+Use dev server in your application
+9m
+Best practices with webpack dev server
+13m 45s
+React router and code splitting
+14m 3s
+
+Get an app production-ready
+12m 20s
+Deployments with GitHub pages
+8m 29s
+Deployments with AWS S3
+8m 26s
+Dynamic sites: Node.js and webpack integration
+8m 30s
+Deployments to AWS EBS
+15m 37s
+
+Файлы примеров: присутствуют
+
+Формат видео: MP4
+
+Видео: AVC, 1280x720, 16:9, 30fps, 214kbps
+
+Аудио: AAC, 48kHz, 160kbps, stereo
