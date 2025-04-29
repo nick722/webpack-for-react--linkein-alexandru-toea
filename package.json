@@ -4,15 +4,12 @@
   "description": "simple book shelf app",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run clean && webpack -d",
+    "dev": "webpack-dev-server",
     "clean": "rimraf dist",
-    "dev-server": "webpack-dev-server",
-    "http-server": "http-server dist/",
-    "build": "webpack -p"
+    "build": "webpack -d"
   },
   "dependencies": {
     "bundle-loader": "^0.5.5",
-    "http-server": "0.10.0",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
