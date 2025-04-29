@@ -21,16 +21,23 @@ var config = {
     vendor: VENDOR_LIBS,
   },
   output: {
-    path: BUILD_DIR,
+    // path: BUILD_DIR,
+    // filename: "[name].[hash].js",
+    path: path.resolve(__dirname, "dist"),
     filename: "[name].[hash].js",
+    publicPath: "/", // Webpack Dev Server will load all additional modules that are being created.
   },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        // include: APP_DIR,
         exclude: /node_modules/,
-        use: "babel-loader",
+        loader: "babel-loader", // loader allows only 1 value, instead of 'use' that allows array
+        options: {
+          babelrc: false,
+          presets: ["babel-preset-env", "react", "stage-2"],
+          plugins: ["syntax-dynamic-import"],
+        },
       },
       {
         test: /\.css$/,

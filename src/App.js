@@ -1,18 +1,26 @@
-import React from 'react';
-import { Route } from 'react-router-dom';
+import React from "react"
+import { Route } from "react-router-dom"
+import Loadable from "react-loadable"
 
-import * as BooksAPI from './BooksAPI';
+import path from "path"
 
-import Home from './Components/Home';
-import SearchPage from './Components/SearchPage';
-import BookDetails from './Components/BookDetails';
+import * as BooksAPI from "./BooksAPI"
+
+import Home from "./Components/Home"
+import SearchPage from "./Components/SearchPage"
+import Loading from "./Components/Loading"
+
+let loadableBookDetails = Loadable({
+  loader: () => import("./Components/BookDetails"),
+  loading: Loading,
+})
 
 class BooksApp extends React.Component {
   constructor(props) {
-    super(props);
-    this.loadList = this.loadList.bind(this);
+    super(props)
+    this.loadList = this.loadList.bind(this)
     // Bind book status to this component so that they can be passed down to children
-    this.handleBookStatusUpdate = this.handleBookStatusUpdate.bind(this);
+    this.handleBookStatusUpdate = this.handleBookStatusUpdate.bind(this)
   }
 
   state = {
@@ -23,20 +31,19 @@ class BooksApp extends React.Component {
 
   componentDidMount() {
     // Load the active shelves whenever component is mounted
-    this.loadList();
+    this.loadList()
   }
 
   loadList() {
     // query API for active shelves and add the books into state
-    BooksAPI.getAll().then((books) => this.setState({ bookList: books }));
+    BooksAPI.getAll().then((books) => this.setState({ bookList: books }))
   }
 
   handleBookStatusUpdate(book, shelf) {
     // Function that gets passed down to children Components
     // Takes book and shelf it needs to go on and makes request to server
     // If request is successful it refreshes the book list in our application with the new data
-    BooksAPI.update(book, shelf).then((res) => res && this.loadList()
-  );
+    BooksAPI.update(book, shelf).then((res) => res && this.loadList())
   }
 
   render() {
@@ -45,34 +52,31 @@ class BooksApp extends React.Component {
         {/* Search Route */}
         <Route
           path='/search'
-          render={ () => (
+          render={() => (
             <SearchPage
-              handleBookStatusUpdate={ this.handleBookStatusUpdate }
-              books={ this.state.bookList }
+              handleBookStatusUpdate={this.handleBookStatusUpdate}
+              books={this.state.bookList}
             />
-        ) }
+          )}
         />
 
         {/* Book Details Route */}
-        <Route
-          path='/details/:bookId'
-          component={BookDetails}
-        />
+        <Route path='/details/:bookId' component={loadableBookDetails} />
 
         {/* Home Page Route */}
         <Route
           path='/'
-          exact={ true }
-          render={ () => (
+          exact={true}
+          render={() => (
             <Home
-              handleBookStatusUpdate={ this.handleBookStatusUpdate }
-              books={ this.state.bookList }
+              handleBookStatusUpdate={this.handleBookStatusUpdate}
+              books={this.state.bookList}
             />
-        ) }
+          )}
         />
       </div>
-    );
+    )
   }
 }
 
-export default BooksApp;
+export default BooksApp
